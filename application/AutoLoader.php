@@ -137,7 +137,7 @@ class AutoLoader {
             if (is_dir($filepath)) {
                 $this->mapFilesInDir($filepath);
             }
-            else if (is_file($filepath) && $this->fileExt[$ext] == true) {
+            else if (is_file($filepath) && isset ($this->fileExt[$ext]) && $this->fileExt[$ext] == true) {
                 $this->loadClassesFromFile($filepath);
             }
         }
